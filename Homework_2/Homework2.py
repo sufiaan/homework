@@ -6,7 +6,7 @@ CIS-2348-18349
 Coding Problem 2
 """
 
-
+import datetime
 
 months = {"JANUARY": "1", "FEBRUARY": "2", "MARCH": "3", "APRIL": "4",
                "MAY": "5", "JUNE": "6", "JULY": "7", "AUGUST": "8",
@@ -38,7 +38,21 @@ for lines in file:
             num = months[m.upper()]
             
             expected = num + "/" + d + "/" + y
-            print(expected)
+            #print(expected)
+            
+            output = datetime.datetime(int(y), int(num), int(d))
+            today = datetime.datetime.now()
+          
+            if today >= output:
+            
+                print(expected)
+                file2.write(expected)
+                file2.write("\n")
+                    
+file.close()                        
+file2.close()
+                                        
+                   
             
                             
                         
